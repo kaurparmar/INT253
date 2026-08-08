@@ -1,0 +1,22 @@
+<h1>Your Results</h1>
+<p>Here are your academic results:</p>
+<table border="2">
+    <tr>
+        
+            <td><h3>Subjects &nbsp</h3></td>
+            <td>
+                <h3>Grade &nbsp</h3>
+            </td>
+            <td><h3>Status &nbsp</h3></td>
+        
+    </tr>
+    
+    {% for result in results %}   
+    <tr>
+    <td><h5 style="color:rgb(95, 147, 160)">{{result.Subject}} &nbsp</h5></td>
+    <td style="color:crimson">{{result.Grade}}</td>
+    <td style="color:darkmagenta">{{result.Status}}</td>
+    </tr>
+    
+    {% endfor %}
+</table>
