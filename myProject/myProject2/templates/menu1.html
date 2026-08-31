@@ -1,0 +1,15 @@
+<h1>Items are:</h1>
+<table border="1">
+    <tr style="background-color:rgb(218, 251, 241)">
+        <td style="font-weight: bold; color: rgb(6, 151, 139);">Name</td>
+        <td style="font-weight: bold; color: rgb(6, 151, 139);">Description</td>
+        <td style="font-weight: bold; color: rgb(6, 151, 139);">Price</td>
+    </tr>
+    {% for item in items %}
+        <tr style="background-color:rgb(238, 255, 246);">
+            <td style="color:coral">{{ item.name }}</td>
+            <td style="color:darkgreen">{{ item.description }}</td>
+            <td style="color:rgb(226, 71, 221)">${{ item.price|floatformat:2 }}</td>
+        </tr>
+    {% endfor %}
+    </table>
