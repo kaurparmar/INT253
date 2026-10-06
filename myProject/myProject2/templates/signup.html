@@ -1,0 +1,25 @@
+<form method="post">
+    {% csrf_token %}
+    <div>
+        {{form.first_name}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {{form.last_name}}
+    </div>
+    <br>
+    <div>
+        {{form.email}}
+    </div>
+<br>
+    <div>
+        {{form.password}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {{form.confirm_password}}
+    </div>
+<br>
+    <label>Your Birthday</label>
+    <a href="#">Why do I need to provide my birthday?</a><br><br>
+    <div>
+        {{form.day}}&nbsp;
+        {{form.month}}&nbsp;
+        {{form.year}}&nbsp;
+    </div>
+    <br>
+    <button type="submit">Sign Up</button>

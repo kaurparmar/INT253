@@ -1,5 +1,5 @@
 from unicodedata import name
-
+from .forms import MyForm
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.middleware.csrf import get_token
@@ -116,3 +116,33 @@ def templateForm(request):
         
     
     return render(request, 'form.html')
+
+def formValidation(request):
+    form =MyForm()
+    if request.method == "POST":
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        password = request.POST.get("password")
+        confirm_password = request.POST.get("confirm_password")
+        day = request.POST.get("day")
+        month = request.POST.get("month")
+        year = request.POST.get("year")
+
+        errors = []
+        if not name:
+            errors.append("Name is required.")
+        if not email:
+            errors.append("Email is required.")
+        if not password:
+            errors.append("Password is required.")
+        if password != confirm_password:
+            errors.append("Passwords do not match.")
+        if not day or not month or not year:
+            errors.append("Date of birth is required.")
+
+        if errors:
+            return render(request, 'form_validation.html', {'errors': errors})
+        
+        return HttpResponse(f"Form submitted successfully!")
+
+    return render(request, 'signup.html',{'form':form})

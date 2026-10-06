@@ -25,4 +25,5 @@ urlpatterns = [
     path('restaurantHome/', views.restaurantHome, name='restaurant_home'),
     path('simpleForm/',views.simpleForm),
     path('templateForm/', views.templateForm, name='template_form'),
+    path('formValidation/', views.formValidation, name='form_validation'),
 ]
