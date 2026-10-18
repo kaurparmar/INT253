@@ -12,4 +12,11 @@ class student(models.Model):
     def _str_(self):
         return self.name
 
+class Students(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    cgpa = models.FloatField()
+
+
+
 
